@@ -1,0 +1,24 @@
+[package]
+name = "scam"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+blake3 = "1.5"
+clap = { version = "4.5", features = ["derive"] }
+filetime = "0.2"
+rayon = "1.10"
+same-file = "1.0"
+thiserror = "1.0"
+walkdir = "2.5"
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.10"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+panic = "abort"
+strip = "symbols"
